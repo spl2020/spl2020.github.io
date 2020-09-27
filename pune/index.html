@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
-<TITLE> PUNE </TITLE>
+<TITLE> New Document </TITLE>
 <META NAME="Generator" CONTENT="EditPlus">
 <META NAME="Author" CONTENT="">
 <META NAME="Keywords" CONTENT="">
@@ -12,20 +12,23 @@
 <SCRIPT language = "JavaScript">
 
 var matches = 56;
-var players = 22;
+var players = 18;
 var teams = 8;
-
-var match_result = new Array(5,7,2,5,3,2,0,1,7,0,1,3,4,0,3,6,7,0,4,2,7,4,5,4,7,2,7,1,2,5,0,1,7,6,2,4,1,4,5,3,6,3,0,6,7,3,7,1,0,2,3,7,5,1,3,5);//);
-var semi_result = new Array(7,3,1,0,7,1,1);
+var r1_end = 27;
+var r2_end = 56;
+var r3_end = 56;
+var r3_exists = false;
+var match_result = new Array(1,2,6,4,0,3,2,5);//);
+var semi_result = new Array(12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12);
 						   
-/*		0 - Bangalore Royal Challengers
+/*		0 - Mumbai Indians
 		1 - Chennai Super Kings
-		2 - Delhi Daredevils
-		3 - Deccan Chargers
+		2 - Delhi Capitals
+		3 - Kings XI Punjab
 		4 - Rajasthan Royals
 		5 - Kolkata Knight Riders
-		6 - Kings XI Punjab
-		7 - Mumbai Indians
+		6 - Royal Challengers Banglore
+		7 - Sun Risers Hyderabad
 		8 - Ongoing
 		9 - Not started
 		11 - draw
@@ -36,12 +39,12 @@ function home_button()
 {
 	document.getElementById('ranks').style.display = '';
 	document.getElementById('homediv').style.display = '';
-	//document.getElementById('schedulediv').style.display = 'none';
+	document.getElementById('schedulediv').style.display = 'none';
 	document.getElementById('resultsdiv').style.display = 'none';	
 	document.getElementById('comparediv').style.display = 'none';
 	document.getElementById('tstatsdiv').style.display = 'none';
 	document.getElementById('pstatsdiv').style.display = 'none';
-	//document.getElementById('preddiv').style.display = 'none';
+	document.getElementById('preddiv').style.display = 'none';
 	document.getElementById('semifinaldiv').style.display = 'none';	
 }
 
@@ -62,12 +65,12 @@ function results_button()
 {
 	document.getElementById('ranks').style.display = '';
 	document.getElementById('homediv').style.display = 'none';
-	//document.getElementById('schedulediv').style.display = 'none';
+	document.getElementById('schedulediv').style.display = 'none';
 	document.getElementById('resultsdiv').style.display = '';	
 	document.getElementById('comparediv').style.display = 'none';
 	document.getElementById('tstatsdiv').style.display = 'none';
 	document.getElementById('pstatsdiv').style.display = 'none';
-	//document.getElementById('preddiv').style.display = 'none';
+	document.getElementById('preddiv').style.display = 'none';
 	document.getElementById('semifinaldiv').style.display = 'none';	
 }
 
@@ -75,12 +78,12 @@ function compare_button()
 {
 	document.getElementById('ranks').style.display = 'none';
 	document.getElementById('homediv').style.display = 'none';
-	//document.getElementById('schedulediv').style.display = 'none';
+	document.getElementById('schedulediv').style.display = 'none';
 	document.getElementById('resultsdiv').style.display = 'none';	
 	document.getElementById('comparediv').style.display = '';
 	document.getElementById('tstatsdiv').style.display = 'none';
 	document.getElementById('pstatsdiv').style.display = 'none';
-	//document.getElementById('preddiv').style.display = 'none';
+	document.getElementById('preddiv').style.display = 'none';
 	document.getElementById('semifinaldiv').style.display = 'none';	
 }
 
@@ -88,12 +91,12 @@ function tstats_button()
 {
 	document.getElementById('ranks').style.display = '';
 	document.getElementById('homediv').style.display = 'none';
-	//document.getElementById('schedulediv').style.display = 'none';
+	document.getElementById('schedulediv').style.display = 'none';
 	document.getElementById('resultsdiv').style.display = 'none';	
 	document.getElementById('comparediv').style.display = 'none';
 	document.getElementById('tstatsdiv').style.display = '';
 	document.getElementById('pstatsdiv').style.display = 'none';
-	//document.getElementById('preddiv').style.display = 'none';
+	document.getElementById('preddiv').style.display = 'none';
 	document.getElementById('semifinaldiv').style.display = 'none';	
 }
 
@@ -101,12 +104,12 @@ function pstats_button()
 {
 	document.getElementById('ranks').style.display = '';
 	document.getElementById('homediv').style.display = 'none';
-	//document.getElementById('schedulediv').style.display = 'none';
+	document.getElementById('schedulediv').style.display = 'none';
 	document.getElementById('resultsdiv').style.display = 'none';	
 	document.getElementById('comparediv').style.display = 'none';
 	document.getElementById('tstatsdiv').style.display = 'none';
 	document.getElementById('pstatsdiv').style.display = '';
-	//document.getElementById('preddiv').style.display = 'none';
+	document.getElementById('preddiv').style.display = 'none';
 	document.getElementById('semifinaldiv').style.display = 'none';	
 }
 
@@ -127,12 +130,12 @@ function Semi_Final_button()
 {
 	document.getElementById('ranks').style.display = 'none';
 	document.getElementById('homediv').style.display = 'none';
-	//document.getElementById('schedulediv').style.display = 'none';
+	document.getElementById('schedulediv').style.display = 'none';
 	document.getElementById('resultsdiv').style.display = 'none';	
 	document.getElementById('comparediv').style.display = 'none';
 	document.getElementById('tstatsdiv').style.display = 'none';
 	document.getElementById('pstatsdiv').style.display = 'none';
-	//document.getElementById('preddiv').style.display = 'none';
+	document.getElementById('preddiv').style.display = 'none';
 	document.getElementById('semifinaldiv').style.display = '';	
 }
 
@@ -330,7 +333,7 @@ function player_stats()
 		supps[j] = new Object();
 	for(j=0;j<teams;j++)
 		supps[j].supp = new Array(0,0,0);
-	for(j=0;j<21;j++)
+	for(j=0;j<r1_end;j++)
 	{
 		if(picks[i].pick[j] !=10)
 			selected[0]++;
@@ -343,7 +346,7 @@ function player_stats()
 			if(picks[i].pick[j] == k)
 				supps[k].supp[0]++;
 	}
-	for(;j<41;j++)
+	for(;j<r2_end;j++)
 	{
 		if(picks[i].pick[j] !=10)
 			selected[1]++;
@@ -356,7 +359,7 @@ function player_stats()
 			if(picks[i].pick[j] == k)
 				supps[k].supp[1]++;
 	}
-	for(;j<56;j++)
+	for(;j<r3_end;j++)
 	{
 		if(picks[i].pick[j] !=10)
 			selected[2]++;
@@ -369,23 +372,23 @@ function player_stats()
 			if(picks[i].pick[j] == k)
 				supps[k].supp[2]++;
 	}
-	divp = "<table border='0'><tr><td><h3>Points</h3><table border='0'><tr bgcolor='00FFE0'><th align='center'></th><th align='center'>Round 1</th><th align='center'>Round 2</th><th align='center'>Round 3</th><th align='center'>Total</th></tr>";
+	divp = "<table border='0'><tr><td><h3>Points</h3><table border='0'><tr bgcolor='00FFE0'><th align='center'></th><th align='center'>Round 1</th><th align='center'>Round 2</th><th align='center'>Total</th></tr>";//<th align='center'>Round 3</th>
 	divp = divp + "<tr bgcolor='#F8F8F8'>";		
 	divp = divp + "<th>Selections</th>";
-	for(k=0;k<3;k++)
+	for(k=0;k<2;k++)
 		divp = divp + "<td align='center'>"+selected[k] +"</td>";
 	divp = divp + "<td align='center'>"+(selected[0]+selected[1]+selected[2]) +"</td></tr>";
 	divp = divp + "<tr bgcolor='#D8D8D8'>";		
 	divp = divp + "<th>Won</th>";
-	for(k=0;k<3;k++)
+	for(k=0;k<2;k++)
 		divp = divp + "<td align='center'>"+won[k] +"</td>";
 	divp = divp + "<td align='center'>"+(won[0]+won[1]+won[2]) +"</td></tr>";
 	divp = divp + "<tr bgcolor='#F8F8F8'>";		
 	divp = divp + "<th>Points</th>";
-	for(k=0;k<3;k++)
+	for(k=0;k<2;k++)
 		divp = divp + "<td align='center'>"+pts[k] +"</td>";
 	divp = divp + "<td align='center'>"+(pts[0]+pts[1]+pts[2]) +"</td></tr>";
-	divp = divp + "</table><h3>Supports</h3><table border='0'><tr bgcolor='00FFE0'><th align='center'>Team</th><th align='center'>Round 1</th><th align='center'>Round 2</th><th align='center'>Round 3</th><th align='center'>Total</th></tr>";
+	divp = divp + "</table><h3>Supports</h3><table border='0'><tr bgcolor='00FFE0'><th align='center'>Team</th><th align='center'>Round 1</th><th align='center'>Round 2</th><th align='center'>Total</th></tr>";//<th align='center'>Round 3</th>
 	for(j=0;j<teams;j++)
 	{
 		if(j%2 != 0)
@@ -393,7 +396,7 @@ function player_stats()
 		else
 			divp = divp + "<tr bgcolor='#F8F8F8'>";
 		divp = divp +"<th align='center'>"+teams_list[j]+"</th>";
-		for(k=0;k<3;k++)
+		for(k=0;k<2;k++)
 			divp = divp + "<td align='center'>"+supps[j].supp[k] +"</td>";
 		divp = divp + "<td align='center'>"+(supps[j].supp[0]+supps[j].supp[1]+supps[j].supp[2]) +"</td></tr>";
 	}
@@ -443,33 +446,33 @@ function semi_info()
 		divplycom = divplycom + "<tr><td align='center'>Semi Finalist "+(i+1)+"</td><td>"+teams_list[semi_result[i]]+"</td>";
 		if(ply1!=100)
 		{
-			if(picks[ply1].pick[56+i] == semi_result[i])
+			if(picks[ply1].pick[r3_end+i] == semi_result[i])
 				divplycom = divplycom + "<td  bgcolor='lime'>";
-			else if(picks[ply1].pick[56+i] == semi_result[0] || picks[ply1].pick[56+i] == semi_result[1] || picks[ply1].pick[56+i] == semi_result[2] || picks[ply1].pick[56+i] == semi_result[3])
+			else if(picks[ply1].pick[r3_end+i] == semi_result[0] || picks[ply1].pick[r3_end+i] == semi_result[1] || picks[ply1].pick[r3_end+i] == semi_result[2] || picks[ply1].pick[r3_end+i] == semi_result[3])
 				divplycom = divplycom + "<td  bgcolor='silver'>";
 			else
 				divplycom = divplycom + "<td>";
-			divplycom = divplycom + teams_list[picks[ply1].pick[56+i]]+"</td>";
+			divplycom = divplycom + teams_list[picks[ply1].pick[r3_end+i]]+"</td>";
 		}	
 		if(ply2!=100)
 		{
-			if(picks[ply2].pick[56+i] == semi_result[i])
+			if(picks[ply2].pick[r3_end+i] == semi_result[i])
 				divplycom = divplycom + "<td  bgcolor='lime'>";
-			else if(picks[ply2].pick[56+i] == semi_result[0] || picks[ply2].pick[56+i] == semi_result[1] || picks[ply2].pick[56+i] == semi_result[2] || picks[ply2].pick[56+i] == semi_result[3])
+			else if(picks[ply2].pick[r3_end+i] == semi_result[0] || picks[ply2].pick[r3_end+i] == semi_result[1] || picks[ply2].pick[r3_end+i] == semi_result[2] || picks[ply2].pick[r3_end+i] == semi_result[3])
 				divplycom = divplycom + "<td  bgcolor='silver'>";
 			else
 				divplycom = divplycom + "<td>";
-			divplycom = divplycom + teams_list[picks[ply2].pick[56+i]]+"</td>";
+			divplycom = divplycom + teams_list[picks[ply2].pick[r3_end+i]]+"</td>";
 		}
 		if(ply3!=100)
 		{
-			if(picks[ply3].pick[56+i] == semi_result[i])
+			if(picks[ply3].pick[r3_end+i] == semi_result[i])
 				divplycom = divplycom + "<td  bgcolor='lime'>";
-			else if(picks[ply3].pick[56+i] == semi_result[0] || picks[ply3].pick[56+i] == semi_result[1] || picks[ply3].pick[56+i] == semi_result[2] || picks[ply3].pick[56+i] == semi_result[3])
+			else if(picks[ply3].pick[r3_end+i] == semi_result[0] || picks[ply3].pick[r3_end+i] == semi_result[1] || picks[ply3].pick[r3_end+i] == semi_result[2] || picks[ply3].pick[r3_end+i] == semi_result[3])
 				divplycom = divplycom + "<td  bgcolor='silver'>";
 			else
 				divplycom = divplycom + "<td>";
-			divplycom = divplycom + teams_list[picks[ply3].pick[56+i]]+"</td>";
+			divplycom = divplycom + teams_list[picks[ply3].pick[r3_end+i]]+"</td>";
 		}
 	}	
 	for(;i<6;i++)
@@ -477,53 +480,53 @@ function semi_info()
 		divplycom = divplycom + "</tr><tr><td align='center'>Finalist "+(i-3)+"</td><td>"+teams_list[semi_result[i]]+"</td>";
 		if(ply1!=100)
 		{
-			if(picks[ply1].pick[56+i] == semi_result[4] || picks[ply1].pick[56+i] == semi_result[5])
+			if(picks[ply1].pick[r3_end+i] == semi_result[4] || picks[ply1].pick[r3_end+i] == semi_result[5])
 				divplycom = divplycom + "<td  bgcolor='Aqua'>";
 			else
 				divplycom = divplycom + "<td>";
-			divplycom = divplycom + teams_list[picks[ply1].pick[56+i]]+"</td>";
+			divplycom = divplycom + teams_list[picks[ply1].pick[r3_end+i]]+"</td>";
 		}
 		if(ply2!=100)
 		{
-			if(picks[ply2].pick[56+i] == semi_result[4] || picks[ply2].pick[56+i] == semi_result[5])
+			if(picks[ply2].pick[r3_end+i] == semi_result[4] || picks[ply2].pick[r3_end+i] == semi_result[5])
 				divplycom = divplycom + "<td  bgcolor='Aqua'>";
 			else
 				divplycom = divplycom + "<td>";
-			divplycom = divplycom + teams_list[picks[ply2].pick[56+i]]+"</td>";
+			divplycom = divplycom + teams_list[picks[ply2].pick[r3_end+i]]+"</td>";
 		}
 		if(ply3!=100)
 		{
-			if(picks[ply3].pick[56+i] == semi_result[4] || picks[ply3].pick[56+i] == semi_result[5])
+			if(picks[ply3].pick[r3_end+i] == semi_result[4] || picks[ply3].pick[r3_end+i] == semi_result[5])
 				divplycom = divplycom + "<td  bgcolor='Aqua'>";
 			else
 				divplycom = divplycom + "<td>";
-			divplycom = divplycom + teams_list[picks[ply3].pick[56+i]]+"</td>";
+			divplycom = divplycom + teams_list[picks[ply3].pick[r3_end+i]]+"</td>";
 		}
 	}
 	divplycom = divplycom + "</tr><tr><td align='center'>Winner</td><td>"+teams_list[semi_result[6]]+"</td>";
 	if(ply1!=100)
 	{
-		if(picks[ply1].pick[56+i] == semi_result[i])
+		if(picks[ply1].pick[r3_end+i] == semi_result[i])
 			divplycom = divplycom + "<td  bgcolor='Darkorange'>";
 		else
 			divplycom = divplycom + "<td>";
-		divplycom = divplycom + teams_list[picks[ply1].pick[56+i]]+"</td>";
+		divplycom = divplycom + teams_list[picks[ply1].pick[r3_end+i]]+"</td>";
 	}
 	if(ply2!=100)
 	{
-		if(picks[ply2].pick[56+i] == semi_result[i])
+		if(picks[ply2].pick[r3_end+i] == semi_result[i])
 			divplycom = divplycom + "<td  bgcolor='Darkorange'>";
 		else
 			divplycom = divplycom + "<td>";
-		divplycom = divplycom + teams_list[picks[ply2].pick[56+i]]+"</td>";
+		divplycom = divplycom + teams_list[picks[ply2].pick[r3_end+i]]+"</td>";
 	}
 	if(ply3!=100)
 	{
-		if(picks[ply3].pick[56+i] == semi_result[i])
+		if(picks[ply3].pick[r3_end+i] == semi_result[i])
 			divplycom = divplycom + "<td  bgcolor='Darkorange'>";
 		else
 			divplycom = divplycom + "<td>";
-		divplycom = divplycom + teams_list[picks[ply3].pick[56+i]]+"</td>";
+		divplycom = divplycom + teams_list[picks[ply3].pick[r3_end+i]]+"</td>";
 	}
 	divplycom = divplycom +"</tr></table>";
 	document.getElementById('semitable').innerHTML= divplycom;
@@ -546,13 +549,13 @@ for(m=0;m<matches;m++)
 		past_rank[m].val[n] = 0;
 	}
 }
-var dat = new Array("12-March","13-March","13-March","14-March","14-March","15-March","16-March","16-March","17-March","18-March","19-March","19-March","20-March","20-March","21-March","21-March","22-March","23-March","24-March","25-March","25-March","26-March","27-March","28-March","28-March","29-March","30-March","31-March","31-March","1-April", "2-April", "3-April", "3-April", "4-April", "4-April", "5-April", "6-April", "7-April", "7-April", "8-April", "9-April", "10-April", "10-April", "11-April", "11-April", "12-April", "13-April", "13-April", "14-April", "15-April", "16-April", "17-April", "18-April", "18-April", "19-April");
-var teams_list = new Array("Bangalore Royal Challengers","Chennai Super Kings","Delhi Daredevils","Deccan Chargers","Rajasthan Royals","Kolkata Knight Riders","Kings XI Punjab","Mumbai Indians","On Going","Not Started","Not Selected","To be decided");
-var team1 = new Array(3,7,6,5,1,4,0,5,2,0,2,3,4,7,3,1,7,0,6,0,7,4,6,4,3,2,7,1,2,5,6,1,7,5,2,3,1,4,5,0,6,3,0,2,4,3,7,1,4,1,6,0,5,6,2,5);
-var team2 = new Array(5,4,2,0,3,2,6,1,7,4,1,6,5,0,2,6,5,1,4,2,1,3,5,1,7,5,6,0,4,3,0,4,3,6,0,4,7,6,2,3,7,1,5,6,7,0,2,5,0,2,3,7,4,1,3,7);
+var dat = new Array("19/09", "20/09", "21/09", "22/09", "23/09", "24/09", "25/09", "26/09", "27/09", "28/09", "29/09", "30/09", "01/10", "02/10", "03/10", "03/10", "04/10", "04/10", "05/10", "06/10", "07/10", "08/10", "09/10", "10/10", "10/10", "11/10", "11/10", "12/10", "13/10", "14/10", "15/10", "16/10", "17/10", "17/10", "18/10", "18/10", "19/10", "20/10", "21/10", "22/10", "23/10", "24/10", "24/10", "24/10", "25/10", "26/10", "27/10", "28/10", "29/10", "30/10", "31/10", "31/10", "01/11", "01/11", "02/11", "03/11");
+var teams_list = new Array("Mumbai Indians", "Chennai Super Kings", "Delhi Capitals", "Kings XI Punjab", "Rajasthan Royals", "Kolkata Knight Riders", "Royal Challengers Banglore", "Sun Risers Hyderabad","On Going","Not Started","Not Selected","To be decided");
+var team1 = new Array(0, 2, 7, 4, 5, 3, 1, 5, 4, 6, 2, 4, 3, 1, 6, 2, 0, 3, 6, 0, 5, 7, 4, 3, 1, 7, 0, 6, 7, 2, 6, 0, 4, 2, 7, 0, 1, 3, 5, 4, 1, 5, 3, 6, 4, 5, 7, 0, 1, 3, 2, 6, 1, 5, 2, 7);
+var team2 = new Array(1, 3, 6, 1, 0, 6, 2, 7, 3, 0, 7, 5, 0, 7, 4, 5, 7, 1, 2, 4, 1, 3, 2, 5, 6, 4, 2, 5, 1, 4, 3, 5, 6, 1, 5, 3, 4, 2, 6, 7, 0, 2, 7, 1, 0, 3, 2, 6, 5, 4, 0, 7, 3, 4, 6, 0);
 var team1_bets = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 var team2_bets = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-var player_list = new Array("Rishi1","Pradeep1","Jimy1","Rahul1","Anmol1","Vara1","Harish1","Ganesh1","Jagde1","Swaroop","Hem","Bhushan","Vijay1","Sridhar","Balaji","KC","Vamshi","Vikrant","Manoj","Ravi","Suman","Havinash");
+var player_list = new Array("Shyam", "Punit", "Piyush", "Manoj", "Dharmendra", "Yuvaraj", "Thiru", "Akansha", "Suman", "Madhu", "Abhijeet", "Neha", "Harsha", "Ganesh", "Vyshnave", "Abhishek", "Prakash", "Ranjit");
 var player_list_ranks = new Array();
 var list_prad1 = new Array();
 var list_prad2 = new Array();
@@ -563,30 +566,26 @@ for(i=0;i<players;i++)
 	player_list_ranks[i] = player_list[i];
 	list_prad1[i] =  player_list[i];
 	list_prad2[i] =  player_list[i];
-}					   //(5,1,2,5,0,4,2,1,4,6,1,4,6,3,1,7,2,4,6,2,0,6,7,4,6,3,7,1,5,4,1,5,4,6,5,7,2,7,4,6//
-picks[0].pick = new Array(5,7,2,0,3,2,6,1,2,4,2,6,4,7,2,1,7,0,6,2,7,4,5,1,7,2,6,1,4,3,0,1,7,5,2,4,7,6,2,0,7,3,5,6,7,3,7,5,4,2,6,7,5,1,3,5,7,2,1,5,5,2,5);//Rishi_0
-picks[1].pick = new Array(3,7,2,0,3,2,6,1,2,0,2,3,5,7,2,1,5,1,6,2,1,3,5,1,3,5,7,0,4,5,6,1,3,6,0,3,1,6,2,3,6,3,5,2,4,0,2,1,0,2,3,0,5,1,2,5,7,2,0,5,2,0,0);//Pradeep_1
-picks[2].pick = new Array(3,7,6,5,1,2,6,5,7,4,2,3,4,7,3,1,7,0,6,2,7,3,5,4,7,2,7,1,2,3,0,1,7,5,2,3,7,6,5,3,7,1,0,2,7,0,7,1,4,2,6,7,4,1,2,7,7,2,0,1,7,2,7);//Jimy_2
-picks[3].pick = new Array(3,7,2,0,1,4,6,5,2,0,1,3,5,7,2,1,5,1,4,2,7,3,6,1,7,2,7,0,2,3,0,1,7,6,0,4,7,4,2,0,7,3,0,2,4,3,7,1,4,2,6,0,5,1,2,7,2,7,4,0,2,7,2);//Rahul_3
-picks[4].pick = new Array(5,7,2,5,3,2,0,1,7,0,2,6,5,0,2,1,7,0,6,0,7,3,6,4,7,2,6,1,4,5,0,1,3,6,2,4,7,4,5,3,6,3,0,6,4,0,7,5,4,2,3,7,5,1,2,7,7,2,0,4,4,2,2);//Anmol_4
-picks[5].pick = new Array(3,4,2,5,3,2,6,1,2,4,2,3,4,7,2,1,7,1,6,2,7,3,6,1,7,2,7,1,2,3,0,1,7,6,2,3,7,6,2,0,7,1,0,2,7,3,7,1,4,2,3,0,5,1,2,5,7,2,0,1,7,0,0);//Vara_5
-picks[6].pick = new Array(5,7,6,0,3,4,0,1,2,4,2,6,4,7,3,6,5,1,4,2,7,4,6,4,3,2,7,1,2,5,0,1,3,5,2,4,1,6,5,0,6,1,0,2,4,0,7,1,0,2,3,7,4,1,2,5,7,2,0,1,7,0,7);//Harish_6
-picks[7].pick = new Array(5,4,6,5,3,4,6,5,7,4,1,6,4,7,3,6,5,0,4,0,7,3,6,1,7,2,7,1,2,5,6,1,7,5,2,3,7,6,5,0,7,3,5,2,7,3,7,5,4,1,3,7,4,1,3,7,7,4,2,5,7,2,7);//Ganesh_7
-picks[8].pick = new Array(3,7,2,0,1,2,0,1,2,0,2,3,4,7,2,1,7,1,6,2,7,3,6,1,7,2,7,0,2,3,0,1,3,5,0,3,7,6,5,0,7,1,5,2,7,3,2,5,4,1,3,7,5,6,2,7,7,0,2,5,7,5,7);//Jagdev_8
-picks[9].pick = new Array(5,7,6,0,1,2,0,5,7,0,2,3,5,0,3,6,5,0,6,0,7,3,5,1,3,5,7,0,2,3,0,1,3,6,0,3,7,6,5,0,7,3,0,2,7,0,2,5,0,2,3,0,5,1,3,7,2,7,0,5,5,0,0);//Swaroop_9
-picks[10].pick = new Array(3,7,2,0,3,4,6,1,2,4,1,3,5,7,3,1,7,1,4,2,1,3,6,4,3,2,7,1,2,3,0,1,3,6,0,3,7,6,2,3,7,3,0,2,7,0,2,1,4,2,3,7,4,1,2,7,7,2,4,0,7,2,2);//Hem_10
-picks[11].pick = new Array(3,7,2,0,3,4,6,1,7,0,2,3,4,7,2,1,7,1,6,0,1,3,6,1,7,2,7,0,2,3,0,1,3,5,0,3,7,4,2,0,7,1,5,2,4,0,7,1,0,2,6,0,4,1,2,7,7,2,4,1,7,2,7);//Bhushan_11
-picks[12].pick = new Array(3,4,2,0,1,2,0,1,7,4,1,3,5,7,3,6,7,1,4,2,1,4,6,1,7,2,7,1,2,5,0,4,3,5,0,3,1,4,5,0,6,1,0,6,4,0,2,1,4,2,6,7,5,1,3,5,7,2,4,1,4,1,1);//Vijay_12
-picks[13].pick = new Array(3,7,2,5,1,4,6,1,2,0,2,6,5,7,2,1,5,0,4,2,1,3,6,4,7,2,7,1,2,5,6,1,7,5,0,3,7,4,5,0,6,1,0,2,7,0,2,1,4,2,3,0,5,1,2,7,2,7,1,0,2,1,1);//Sridhar_13
-picks[14].pick = new Array(5,4,2,5,1,2,0,1,2,4,1,3,5,7,2,1,5,0,6,0,7,3,5,4,3,2,7,0,2,3,0,1,7,6,2,3,7,4,5,0,7,1,5,2,7,3,2,5,4,2,6,7,4,1,3,5,7,2,4,0,7,4,4);//Balaji_14
-picks[15].pick = new Array(5,7,2,0,1,2,6,5,7,4,2,3,5,7,2,1,7,0,6,0,7,3,5,4,7,2,7,0,2,3,0,4,7,5,0,3,7,6,2,0,7,1,0,2,7,0,7,1,0,2,3,7,4,1,2,7,7,0,2,1,7,0,7);//KC_15
-picks[16].pick = new Array(5,4,2,5,1,4,6,1,2,4,1,3,4,7,2,1,7,1,4,2,1,3,6,1,7,2,7,1,4,3,6,4,7,6,2,3,1,6,2,0,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10);//Vamshi_16
-picks[17].pick = new Array(5,7,2,0,3,2,6,1,7,0,1,6,4,7,2,6,7,0,4,0,7,3,5,1,7,2,7,1,2,3,6,1,7,6,0,3,7,4,5,3,7,1,0,2,7,3,2,1,4,1,3,7,5,1,3,7,7,1,2,0,7,2,2);//Vikrant_17
-picks[18].pick = new Array(10,7,6,0,3,2,0,1,2,4,1,6,5,7,2,6,7,0,4,2,1,10,6,4,7,2,7,0,2,5,0,1,7,6,2,4,7,6,5,0,7,3,0,2,7,3,7,1,4,1,6,0,4,1,2,7,7,2,1,4,7,2,7);//Manoj_18
-//,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
-picks[19].pick = new Array(10,7,2,5,3,2,0,1,7,4,1,3,4,7,3,1,7,1,4,2,1,3,5,1,3,2,7,0,2,3,0,1,3,5,0,3,7,4,2,3,7,1,0,2,7,0,7,1,4,2,3,0,4,1,3,7,7,4,2,0,7,2,7);//Ravi_19
-picks[20].pick = new Array(10,10,10,10,10,10,6,1,2,4,2,6,5,7,3,1,5,0,6,0,1,3,5,1,3,2,7,0,2,3,0,1,3,5,0,3,7,4,2,3,7,3,0,2,4,3,7,1,4,1,6,0,5,6,2,5,7,2,4,0,7,0,7);//Suman_20
-picks[21].pick = new Array(10,10,10,10,10,10,10,10,10,10,1,6,4,0,2,1,7,0,4,0,7,4,6,1,3,5,6,0,2,5,0,1,7,6,0,3,1,6,5,0,7,3,0,6,7,0,2,5,0,1,6,0,4,6,3,7,0,7,4,2,0,4,0);//Havinash_21
+}					   
+picks[0].pick = new Array(10,10,10,10,10,10,1,7,4,6,2,5,0,1,6,5,7,1,6,0,1,7,4,5,1,7,0);//Shyam_0
+picks[1].pick = new Array(10,10,10,10,10,10,1,7,4,0,2,5,0,1,6,2,0,1,6,0,1,7,2,5,1,4,2);//Punit_1
+picks[2].pick = new Array(10,10,10,10,10,10,1,5,3,0,2,5,0,1,6,5,0,1,6,0,5,3,4,3,1,4,0);//Piyush_2
+picks[3].pick = new Array(10,10,10,10,10,10,1,7,3,0,7,5,0,1,6,2,0,1,2,0,1,3,4,3,6,7,0);//Manoj_3
+picks[4].pick = new Array(10,10,10,10,10,10,1,7,3,0,2,5,0,1,4,5,0,1,6,4,1,7,4,5,1,7,0);//Dharmendra_4
+picks[5].pick = new Array(10,10,10,10,10,10,1,5,4,0,7,5,0,1,4,2,0,1,2,0,1,7,4,3,1,7,0);//Yuvaraj_5
+picks[6].pick = new Array(10,10,10,10,10,10,1,7,3,6,7,4,3,1,6,2,7,3,6,4,5,7,4,5,1,7,0);//Thiru_6
+picks[7].pick = new Array(10,10,10,10,10,10,2,5,3,6,2,4,0,1,6,2,0,1,2,0,1,3,2,5,6,7,2);//Akansha_7
+picks[8].pick = new Array(10,10,10,10,10,10,1,7,3,6,7,5,0,7,6,5,7,1,6,0,1,7,2,3,6,7,0);//Suman_8
+picks[9].pick = new Array(10,10,10,10,10,10,1,7,4,6,7,4,0,1,6,5,0,1,6,0,1,3,4,3,6,7,2);//Madhu_9
+picks[10].pick = new Array(10,10,10,10,10,10,1,5,3,0,2,4,0,1,4,5,0,1,6,0,1,3,4,3,1,4,0);//Abhijeet_10
+picks[11].pick = new Array(10,10,10,10,10,10,1,7,3,6,7,4,0,1,6,2,0,1,6,0,1,3,4,3,1,7,0);//Neha_11
+picks[12].pick = new Array(10,10,10,10,10,10,1,5,4,6,2,4,3,1,6,2,0,3,6,4,1,3,2,5,6,7,0);//Harsha_12
+picks[13].pick = new Array(10,10,10,10,10,10,2,7,3,0,7,5,0,7,6,5,0,3,6,0,5,3,4,3,6,7,0);//Ganesh_13
+picks[14].pick = new Array(10,10,10,10,10,10,1,7,4,0,2,4,0,7,6,5,0,3,6,4,5,3,4,5,1,7,2);//Vyshnave_14
+picks[15].pick = new Array(10,10,10,10,10,10,2,7,3,0,2,4,0,1,4,2,0,3,6,4,1,3,4,5,1,4,0);//Abhishek_15
+picks[16].pick = new Array(10,10,10,10,10,10,1,5,3,0,2,4,3,1,6,5,0,3,2,0,1,7,4,5,1,7,0);//Prakash_16
+picks[17].pick = new Array(10,10,10,10,10,10,1,7,3,6,7,4,3,1,4,2,0,3,6,0,1,3,4,3,1,7,2);//Ranjit_17
+
 /*		10 - Not Selected	*/
 for(i=0;i<matches;i++)
 	for(j=0;j<players;j++)
@@ -610,16 +609,16 @@ for(mi=0;mi<match_result.length;mi++)
 	{
 		if(match_result[mi] == picks[j].pick[mi])
 		{
-			if(mi<21)
+			if(mi<r1_end)
 				player_score[j]++;
-            else if(mi>=21 && mi<41)
+            else if(mi>=r1_end && mi<r2_end)
                 player_score[j] = player_score[j]+2;
-			else if(mi>=41 && mi<56)
+			else if(mi>=r2_end && mi<r3_end)
                 player_score[j] = player_score[j]+3;
 		}
 		else if(match_result[mi] == 11)
 		{
-			if(mi<21)
+			if(mi<r1_end)
 				player_score[j] = player_score[j] + 0.5;
             else
                 player_score[j]++;
@@ -650,12 +649,12 @@ for(mi=0;mi<match_result.length;mi++)
 for(j=0;j<players;j++)
 {
 	for(i=0;i<4;i++)
-		if(semi_result[i] == picks[j].pick[56+i])
+		if(semi_result[i] == picks[j].pick[r3_end+i])
 			player_score[j] = player_score[j]+4;
-		else if(semi_result[0] == picks[j].pick[56+i] || semi_result[1] == picks[j].pick[56+i] || semi_result[2] == picks[j].pick[56+i] || semi_result[3] == picks[j].pick[56+i])
+		else if(semi_result[0] == picks[j].pick[r3_end+i] || semi_result[1] == picks[j].pick[r3_end+i] || semi_result[2] == picks[j].pick[r3_end+i] || semi_result[3] == picks[j].pick[r3_end+i])
 			player_score[j] = player_score[j]+3;
 	for(;i<6;i++)
-		if(semi_result[4] == picks[j].pick[56+i] || semi_result[5] == picks[j].pick[56+i])
+		if(semi_result[4] == picks[j].pick[r3_end+i] || semi_result[5] == picks[j].pick[r3_end+i])
 			player_score[j] = player_score[j]+5;
 	if(semi_result[6] == picks[j].pick[62])
 		player_score[j] = player_score[j]+7;
@@ -729,13 +728,13 @@ for(j=0;j<players;j++)
 			<table>
 				<tr>
 					<td><input type=button value="Home" name="home" onclick="home_button()"></td>
-					<!--<td><input type=button value="Schedule" name="schedule" onclick="schedule_button()"></td>-->
+					<td><input type=button value="Schedule" name="schedule" onclick="schedule_button()"></td>
 					<td><input type=button value="Results" name="results" onclick="results_button()"></td>
 					<td><input type=button value="Compare" name="compare" onclick="compare_button()"></td>
 					<td><input type=button value="Team Stats" name="tstats" onclick="tstats_button()"></td>
 					<td><input type=button value="Player Stats" name="pstats" onclick="pstats_button()"></td>
-					<!--<td><input type=button value="Predictions" name="predtab" onclick="prediction_button()"></td>-->
-					<td><input type=button value="Semifinals/Finals" name="sftab" onclick="Semi_Final_button()"></td>
+					<td><input type=button value="Predictions" name="predtab" onclick="prediction_button()"></td>
+					<!--<td><input type=button value="Semifinals/Finals" name="sftab" onclick="Semi_Final_button()"></td>-->
 				</tr>
 			</table></td>
 			<!-- end of buttons-->	
@@ -931,13 +930,13 @@ for(i=0;i<teams;i++)
 	}
 	tem_won1[i] = tem_won[i];
 	for(j=0;j<players;j++){
-		for(k=0;k<21;k++)
+		for(k=0;k<r1_end;k++)
 			if(picks[j].pick[k] == i)
 				supps1[i]++;
-		for(k=21;k<41;k++)
+		for(k=r1_end;k<r2_end;k++)
 			if(picks[j].pick[k] == i)
 				supps2[i]++;
-		for(k=41;k<56;k++)
+		for(k=r2_end;k<r3_end;k++)
 			if(picks[j].pick[k] == i)
 				supps3[i]++;}
 	supps[i]=supps1[i]+supps2[i]+supps3[i];
@@ -956,7 +955,7 @@ for(i=0;i<new_teams_list.length;i++)
 			//divsas = divsas + tem_play[j] +"</td><td align='center'>" + tem_won1[i] +"</td><td align='center'>" + (tem_play[j] - tem_won1[i]) +"</td><td align='center'>" + (tem_won1[i]*2) +"</td></tr>";
 			//divsas = divsas + tem_play[j] +"</td><td align='center'>" + tem_won[i] +"</td><td align='center'>" + (tem_play[j] - tem_won[i]) +"</td><td align='center'>" + (tem_won[i]*2) +"</td><td align='center'>" + supps[j] +"</td></tr>";
 }
-divsas = divsas + "</table><h3>Supports</h3><table border='0'><tr bgcolor='00FFE0'><th align='center'>Team</th><th align='center'>Round 1</th><th align='center'>Round 2</th><th align='center'>Round 3</th><th align='center'>Total</th></tr>";
+divsas = divsas + "</table><h3>Supports</h3><table border='0'><tr bgcolor='00FFE0'><th align='center'>Team</th><th align='center'>Round 1</th><th align='center'>Round 2</th><th align='center'>Total</th></tr>";//<th align='center'>Round 3</th>
 sort_value(new_teams_list1, 0, supps.length-1, supps);
 for(i=0;i<new_teams_list.length;i++)
 {
@@ -967,7 +966,7 @@ for(i=0;i<new_teams_list.length;i++)
 	divsas = divsas + "<td align='center'>"+ new_teams_list1[i] + "</td><td align='center'>";
 	for(j=0;j<teams;j++)
 		if(new_teams_list1[i] == teams_list[j])
-			divsas = divsas + supps1[j] +"</td><td align='center'>" + supps2[j] +"</td><td align='center'>" + supps3[j] +"</td><td align='center'>" + supps[i] +"</td></tr>";
+			divsas = divsas + supps1[j] +"</td><td align='center'>" + supps2[j] +"</td><td align='center'>" + supps[i] +"</td></tr>";//<td align='center'>" + supps3[j] +"</td>
 			//divsas = divsas + tem_play[j] +"</td><td align='center'>" + tem_won[i] +"</td><td align='center'>" + (tem_play[j] - tem_won[i]) +"</td><td align='center'>" + (tem_won[i]*2) +"</td><td align='center'>" + supps[j] +"</td></tr>";
 }
 divsas = divsas + "</table>";
